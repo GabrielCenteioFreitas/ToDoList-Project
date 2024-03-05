@@ -1,0 +1,197 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title> 
+    <link rel="website icon" type="png" href="{% static 'base/img/website-icon.png' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        *:focus {
+            outline: none;
+        }
+        body {
+            background-color: #FAFAFA;
+            padding-top: 50px;
+        }
+        body * {
+            font-family: 'Nunito', sans-serif;
+        }
+        a, ul, p, button {
+            text-decoration: none;
+            color: #4b5156;
+        }
+        h1 {
+            margin: 0;
+        }
+
+        .button {
+            background: #FAFAFA;
+            color: #eb796f;
+            border: 1px solid #eb796f;
+            border-radius: 5px;
+            padding: 10px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: background .3s;
+        }
+        .button:hover {
+            background: #eea3905b;
+        }
+        .button:focus {
+            outline: 1.5px solid #eb796f;
+        }
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background-color: #FFFFFF;
+            -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, .21);
+            box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, .21);
+        }
+
+        .header-bar {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, #eea390 0%, #eb796f 43%, #eb796f 100%);
+        }
+        .header-bar *{
+            color: #FFFFFF;
+        }
+        .header-bar-tasklist h1 {
+            margin: 0 0 15px;
+        }
+        .header-bar input {
+            background-color: transparent;
+            border: none;
+            
+            color: #f7f7f7;
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        .task-items-wrapper h3 {
+            padding: 20px;
+            padding-top: 0;
+        }
+        .task-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #ffffff;
+            border-top: 2px solid #e2e2e2;
+        }
+        .task-wrapper .delete-link {
+            font-weight: 700;
+            color: #cf4949;
+            font-size: 22px;
+            line-height: 0;
+        }
+        .task-title {
+            display: flex;
+        }
+        .task-title a {
+            color: #777474;
+            margin-left: 10px;
+        }
+        .task-complete-icon {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #69c069;
+        }
+        .task-incomplete-icon {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #dadada;
+        }
+
+        #search-add-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 14px 20px 20px;
+        }
+        input[type=text],
+        input[type=password],
+        textarea {
+            border: 1px solid #eb796f;
+            border-radius: 5px;
+            padding: 10px;
+            width: 90%;
+        }
+        input[type=text]:focus,
+        input[type=password]:focus,
+        textarea:focus {
+            outline: 1.5px solid #eb796f;
+        }
+        #search-add-wrapper .button {
+            margin-left: 15px;
+        }
+        #add-link{
+            color: #eb796f;
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 0;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+        .card-body form input,
+        .card-body form textarea {
+            width: 100%;
+        }
+        .card-body form input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            display: block;
+            margin-left: 0;
+        }
+        .card-body form .button {
+            display: block;
+            margin-inline: auto;
+            width: 50%;
+        }
+        .card-body ul {
+            list-style: none;
+            margin-top: -10px;
+        }
+        .card-body ul, .card-body span {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+        
+    </div>
+
+
+</body>
+</html>
