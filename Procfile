@@ -1,1 +1,1 @@
-web: gunicorn reportersprj.wsgi --log-file -
+python manage.py migrate && python manage.py collectstatic --noinput && gunicorn todo_list.wsgi
